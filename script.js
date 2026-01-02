@@ -20,7 +20,7 @@ const questions = [
   }
 ];
 
-const questionImg = document.getElementById("question-img");
+const questionImg = document.getElementById("question-image");
 
 let currentQuestion = 0;
 

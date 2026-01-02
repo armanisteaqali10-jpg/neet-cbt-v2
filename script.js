@@ -1,4 +1,5 @@
-console.log("script.js loaded");
+console.log("neet-cbt-v2 script loaded");
+
 
 let currentQuestion = 0;
 

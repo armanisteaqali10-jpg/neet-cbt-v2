@@ -1,15 +1,19 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
   margin: 0;
   padding: 0;
+  background: #f2f4f7;
+  overflow-x: hidden; /* 🚫 stops sideways scroll */
+  font-family: Arial, sans-serif;
 }
 
 #app {
   max-width: 900px;
-  margin: 40px auto;
-  background: white;
+  margin: 30px auto;
+  background: #ffffff;
   padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden; /* 🚫 keeps everything inside */
 }
 
 

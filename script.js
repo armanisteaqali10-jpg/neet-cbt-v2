@@ -1,3 +1,5 @@
+console.log("script.js loaded");
+
 let currentQuestion = 0;
 
 // THIS STORES STUDENT ANSWERS

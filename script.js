@@ -27,7 +27,7 @@ nextBtn.addEventListener("click", () => {
   // SAVE ANSWER
   answers[currentQuestion] = selectedOption;
 
-  console.log("Saved answers:", answers);
+  console.log("Current answers object:", answers);
 
   // TEMP: Move to next question index
   currentQuestion++;

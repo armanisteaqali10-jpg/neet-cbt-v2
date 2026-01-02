@@ -1,45 +1,40 @@
-let currentQuestionIndex = 0;
-let selectedAnswer = null;
+let currentQuestion = 0;
 
-const questionImage = document.getElementById("question-image");
+// THIS STORES STUDENT ANSWERS
+let answers = {};
+
 const options = document.querySelectorAll(".option");
 const nextBtn = document.getElementById("next-btn");
-const title = document.getElementById("question-title");
 
-function loadQuestion() {
-  const q = questions[currentQuestionIndex];
+let selectedOption = null;
 
-  title.textContent = `NEET CBT – Question ${q.id}`;
-  questionImage.src = q.image;
-
-  selectedAnswer = null;
-  options.forEach(btn => {
-    btn.classList.remove("selected");
-  });
-}
-
-options.forEach(button => {
-  button.addEventListener("click", () => {
-    options.forEach(btn => btn.classList.remove("selected"));
-    button.classList.add("selected");
-    selectedAnswer = button.dataset.option;
+// OPTION CLICK
+options.forEach(option => {
+  option.addEventListener("click", () => {
+    options.forEach(o => o.classList.remove("selected"));
+    option.classList.add("selected");
+    selectedOption = option.dataset.option;
   });
 });
 
+// NEXT BUTTON
 nextBtn.addEventListener("click", () => {
-  if (selectedAnswer === null) {
-    alert("Please select an option");
+  if (!selectedOption) {
+    alert("Please select an option before continuing.");
     return;
   }
 
-  currentQuestionIndex++;
+  // SAVE ANSWER
+  answers[currentQuestion] = selectedOption;
 
-  if (currentQuestionIndex >= questions.length) {
-    alert("Test completed!");
-    return;
-  }
+  console.log("Saved answers:", answers);
 
-  loadQuestion();
+  // TEMP: Move to next question index
+  currentQuestion++;
+  selectedOption = null;
+
+  // Remove selection UI
+  options.forEach(o => o.classList.remove("selected"));
+
+  alert("Answer saved! (Check console)");
 });
-
-loadQuestion();

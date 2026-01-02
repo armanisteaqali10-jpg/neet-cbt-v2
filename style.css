@@ -36,3 +36,7 @@ body {
     color: white;
 }
 
+.option.selected {
+    background: #1e88e5;
+    color: white;
+}
